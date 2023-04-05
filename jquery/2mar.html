@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+
+
+        <script>      /*Jquery script */
+            $(document).ready(function(){
+                $("#hide").click(function(){
+                    $("p:even").hide(400);
+
+                });
+                $("#show").click(function(){
+                    $("p").show("slow");
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+    <p>Click on Hide button!!!!!!!!</p>
+    <p>Hello</p>
+    <p>This Web tech Class</p>
+    <p>Click on SHOW to see the Text</p>
+    <button id="hide">Click me to hide</button>
+    <button id="show">Click me to show</button>
+    </body>
+</html>

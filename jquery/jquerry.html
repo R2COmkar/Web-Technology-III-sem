@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Jquery</title>
+
+        <script src="jquery-3.6.0.js"></script>
+    
+    <script>
+        $(document).ready(function(){       /*p:odd and even to delete alt*/
+            $("p").click(function(){
+                $(this).fadeOut();          /*fadeOut,hide,*/
+            });
+        });
+
+
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").hide();      /*p:first */
+            });
+        });
+    </script>
+    </head>
+
+
+
+<body>
+    <p>Click on text to hide it!!!!!!!!</p>
+    <p>Hello</p>
+    <p>This Web tech Class</p>
+    <p>Click to hide the Text</p>
+    <button>Click me</button>
+</body>
+
+
+</html>
