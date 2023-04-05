@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>React</title>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		<style>
+			h1, h2 {
+				text-align: center;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<div id="container"></div>
+		<script type="text/babel">
+		
+			class Counter extends React.Component {		//Class Creation
+				constructor(props, context) {			// Constructor for using states
+					super(props, context);				// super for accessing parent properties
+					this.state = {seconds: 0};			// state created by name "seconds"
+		this.timerTick = this.timerTick.bind(this);		// binding state with function "timerTick"
+				
+				}
+				componentDidMount() {
+					setInterval(this.timerTick, 1000);	// Setting time interval to call the function "timerTick"
+				}
+				timerTick() {
+					this.setState((prevState)=>{		// Setting previous state value
+						return {
+					seconds: prevState.seconds + 1		// Incrementing state value by 1
+						}
+					});
+				}
+			render() {
+					return (
+						<h1>{this.state.seconds}</h1>	<!-- Displaying state value as output-->
+					);
+				}
+			}
+			
+			class CounterDisplay extends React.Component {
+				render() {
+					return (
+						<div>
+							<Counter/>
+							<h2>seconds </h2>
+							<h2>since you loaded the page</h2>
+						</div>
+					);
+				}
+			}
+			
+			ReactDOM.render(
+				<CounterDisplay/>,
+				document.querySelector("#container")
+			);
+		</script>
+	</body>
+</html>
+
+<!-- 
+class Counter extends React.Component {
+				constructor(props, context) {
+					super(props, context);
+
+	this.state = {seconds: 0};
+	
+	this.timerTick = this.timerTick.bind(this);
+				
+				}
+				
+				componentDidMount() {
+					setInterval(this.timerTick, 1000);
+				}
+				
+				
+				timerTick() {
+					this.setState((prevState)=>{
+						return {
+					seconds: prevState.seconds + 1
+						}
+					});
+				}
+
+				render() {
+					return (
+						<h1>{this.state.seconds}</h1>
+					);
+				}
+			}
+			class CounterDisplay extends React.Component {
+				render() {
+					return (
+						<div>
+							<Counter/>
+							<h2>seconds </h2>
+							<h2>since you loaded the page</h2>
+						</div>
+					);
+				}
+			}
+-->
