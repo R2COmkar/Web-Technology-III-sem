@@ -1,0 +1,31 @@
+<!-- Using Javascript -->
+
+<html>
+	<head>
+		<title>My first HTML document</title>
+	
+	</head>
+	<body >
+	
+		<script type= "text/javascript">
+			
+			//Constructors
+			
+			function item(name, age, sem){
+				this.name = name;
+				this.age = age;
+				this.sem = sem;
+			}
+			let item1 = new item("Reebok", 25, 3);
+			let item2 = new item("Ree", 50, 4);
+		
+		item.prototype.show = function(){
+			document.write(this.name+" "+this.age+" "+this.sem+"<br/>");
+		}	
+		item1.show();
+		item2.show();
+		</script>	
+		
+		
+	</body>
+</html>

@@ -1,0 +1,29 @@
+			p{
+				background-color:yellow;
+				color:red;
+			}
+		
+			ol{
+				background-color:green;
+				font-family:arial;
+				font-size:25;
+			}
+			
+			h1,ul{
+				font-family:Lucida Handwriting;
+				font-size:25;
+			}
+			
+			h2:hover{
+				color:blue;
+				background-color:yellow;
+			}
+			
+			html:active{
+				background-color:black;
+			}
+			
+			.cls4{
+				width:200px;
+				left:500px;
+			}

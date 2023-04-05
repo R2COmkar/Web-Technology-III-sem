@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            /* Use Of Canvas Tag */
+            function init (){
+                c1=document.querySelector("#c1");
+                ctx=c1.getContext("2d");
+
+
+                ctx.font="30px Arial";
+                ctx.strokeText("Hello World",100,100);
+
+
+                ctx.fillStyle="#FF0000";
+                ctx.arc(180,100,80,0, 2*Math.PI,0);
+                ctx.fill();
+                ctx.strokeText("JAPAN",135,100)
+
+            }
+        </script>
+
+
+
+
+    </head>
+    <body onload="init()">
+        <canvas id="c1" width="400px" height="200px"
+        style="border:1px solid #000000;">
+    </canvas>
+
+    </body>
+</html>
