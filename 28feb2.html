@@ -1,0 +1,28 @@
+<!--Get Location get Latitude and longitude in console-->
+<html>
+    <head>
+        <script>
+            function getpos()
+            { /*The (navigator geolocation ) keyword are important need to remeber */
+                navigator.geolocation.getCurrentPosition(show,error);
+
+            }
+            function show(position){
+                ps=position;
+
+                console.log("Your Current location:" +
+                position.coords.latitude+""+
+                position.coords.longitude);
+            }
+            function error(error)
+            {
+                e=error;
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <button onclick="getpos()">Get Current Location</button>
+    </body>
+</html>

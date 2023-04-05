@@ -1,0 +1,43 @@
+<html>
+    <head><title>REACT</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src=	"https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    </head>
+    <body>
+     <script type="text/babel">
+        var colors=['red','purple','green','yellow','blue','brown','violet','pink','orange','teal']
+          class Customtext extends React.Component{
+            constructor(props){
+                super(props);
+                this.textPara=null;
+                this.setTextRef=(element)=>{
+                    this.textPara=element;
+                };
+                this.changeText=()=>{
+                    if(this.textPara){
+                        let i=Math.floor(Math.random()*100)%10;
+                        this.textPara.innerHTML=colors[i];
+                        this.textPara.style.color=colors[i];    /*change to style.backgroundColor=colors[i]
+                                                                    to change the background color*/     
+                    }
+                };
+            }
+            componentDidMount(){
+
+            }
+            render(){
+                return(
+                    <div>
+                <h1 ref={this.setTextRef}>This Is Test</h1>
+                <input type="button" value="Change The Text" onClick={this.changeText}/>
+                </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Customtext/>,document.body
+        )
+     </script>
+     </body>
+     </html>

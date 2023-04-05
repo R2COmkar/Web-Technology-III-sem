@@ -1,0 +1,31 @@
+<html>
+    <head><title>Keys</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src=	"https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    </head>
+    <body>
+        <div id="cont"></div>
+        <script type="text/babel">
+            
+            function ListItem(props){
+                return<li>{props.value}</li>;
+            }
+            function NumberList(props){
+                const numbers=props.numbers;
+
+            const listTtems=numbers.map((num)=><ListItem key={num.toString()} value={num}/>);
+
+             return(
+                <ul>
+                    {listTtems}
+                </ul>
+             );
+            }
+            const numbers=[1,2,3,4,5];
+            ReactDOM.render(<NumberList numbers={numbers}/>,
+            document.querySelector("#cont"));
+
+        </script>
+        </body>
+        </html>

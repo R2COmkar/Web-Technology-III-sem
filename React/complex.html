@@ -1,0 +1,77 @@
+<!--Complex Compoents -->
+
+<html>
+    <head><title>REACT</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src=	"https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    </head>
+    <body>
+        <div id="cont"></div>
+        <script type="text/babel">
+            class Resimage extends React.Component{
+                render(){
+                    // var imgsize={
+                    //     width:"60px",
+                    //     height:"50px",
+
+
+                    // };
+                    return(
+                        <div>
+                            <img src={this.props.src}>
+                            </img>
+                            </div>
+                    );
+                }
+            }
+
+            class Reslink extends React.Component{
+                    render(){
+                        return(
+                            <div>
+                                <a href={this.props.link} >{this.props.linktext}</a>
+                                </div>
+                        );
+                    }
+                }
+
+           class Rescaption extends React.Component{
+                    render(){
+                        return(
+                            <div>
+                               <p>{this.props.caption}</p></div>
+
+                        );
+                    }
+                }
+
+            class Srchresult extends React.Component{     //main Class
+                    render(){
+                        return(
+                            <div>
+                                <Resimage{...this.props}/>
+                                <Rescaption{...this.props}/>
+                                <Reslink{...this.props}/>
+                                </div>
+                                
+                        );
+                    }
+                }
+
+                ReactDOM.render(
+                    <div>
+                        <Srchresult src="rb19.jpeg"
+                        link="https://www.redbullracing.com/int-en"
+                        linktext="RebullF1" caption="F1 RB19|Fastest Car on GRID....!!!"/>
+                        </div>,
+                        document.querySelector("#cont")
+
+
+
+                );
+
+            
+        </script>
+        </body>
+        </html>

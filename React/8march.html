@@ -1,0 +1,42 @@
+<!-- React Inline styling -->
+
+
+<html>
+    <head><title>REACT</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src=	"https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    </head>
+    <body>
+     <div id="cont"></div>
+     <script type="text/babel">
+        var cont=document.querySelector("#cont");
+         class Letter extends React.Component{
+            render(){
+                var letterStyle={
+                    padding:"20px",
+                    margin:"20px",
+                    backgroundColor:this.props.bgcolor,
+                    color:"#333",
+                    display:"inline",
+                };
+                return(
+                    <div style={letterStyle}>{this.props.children}
+                        </div>
+                );
+            }
+         }
+
+         ReactDOM.render(
+            <div>
+                <Letter bgcolor="red">A</Letter>
+                <Letter bgcolor="orange">E</Letter>
+                <Letter bgcolor="yellow">I</Letter>
+                <Letter bgcolor="purple">O</Letter>
+                <Letter bgcolor="green">U</Letter>
+                </div>,cont
+         );
+     </script>
+     </body>
+     </html>
+
